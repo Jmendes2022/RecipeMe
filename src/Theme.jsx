@@ -8,21 +8,21 @@ const theme = extendTheme({
         global: {
             "*": {
                 fontFamily: "'Comfortaa', sans-serif",
+                padding: "0px",
+                margin: "0px"
+            },
+            body: {
+                borderBottom: "solid 8px green",
+            },
+            p: {
+                fontSize: "18px"
+            },
+            label: {
+                fontSize: "20px",
             }
+
         }
     },
-    components: {
-        // Button: {
-        //     baseStyle: {
-        //         color: "red"
-        //     }
-        // },
-        // Link: {
-        //     baseStyle: {
-        //         color: "red"
-        //     }
-        // }
-    }
 });
 
 export default theme;

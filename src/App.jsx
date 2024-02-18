@@ -1,7 +1,9 @@
-import { Flex} from '@chakra-ui/layout'
+import { Container, Flex} from '@chakra-ui/layout'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Header from './Components/Header'
 import Home from './Components/Home'
+import Footer from "./Components/Footer";
+
 
 const router = createBrowserRouter([
   {
@@ -13,10 +15,11 @@ const router = createBrowserRouter([
 function App() {
 
   return (
-    <Flex w="100vw" height="auto" direction={"column"}>
-      <Header />
-      <RouterProvider router={router} />
-    </Flex>
+      <Flex h="100%" w={"100%"} direction={"column"}>
+        <Header />
+        <RouterProvider router={router} />
+        <Footer/>
+      </Flex>
   )
 }
 
