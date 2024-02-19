@@ -5,12 +5,20 @@ import {
     AlertDescription,
   } from '@chakra-ui/react'
 
+import "../App.css"
+
+const alertStyle = {
+    position: "absolute",
+    justifyContent: "center",
+    animation: "fadeOut 8s ease-out"
+}
+
 export default function LogoutSuccessfullAlert() {
 
     return (
-        <Alert status='success'>
+        <Alert status='success' style={alertStyle} >
             <AlertIcon />
-            <AlertTitle>Your browser is outdated!</AlertTitle>
-            <AlertDescription>Your Chakra experience may be degraded.</AlertDescription>
+            <AlertTitle>Success!</AlertTitle>
+            <AlertDescription>You have been securely logged out!</AlertDescription>
         </Alert>
 )}

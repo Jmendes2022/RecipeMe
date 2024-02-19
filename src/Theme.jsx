@@ -21,7 +21,7 @@ const theme = extendTheme({
                 fontSize: "20px",
             }
 
-        }
+        },
     },
 });
 

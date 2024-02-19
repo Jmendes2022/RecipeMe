@@ -18,8 +18,9 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-  const [user, setUser] = useState();
-  
+  const [user, setUser] = useState("Jordan");
+  const [showLogoutAlert, setShowLogoutAlert] = useState(false);
+
   //This state for the login modal
   const { isOpen: isLoginModalOpen, onOpen: onLoginModalOpen, onClose: onLoginModalClose } = useDisclosure();
   const { isOpen: isForgotPasswordModalOpen, onOpen: onForgotPasswordModalOpen, onClose: onForgotPasswordModalClose } = useDisclosure();
@@ -35,6 +36,12 @@ function handleLogIn(username, password) {
 
 function handleLogout() {
   setUser(null);
+  setShowLogoutAlert(true);
+
+  //Sets timer to reset logout component.
+  setTimeout(() => {
+    setShowLogoutAlert(false)
+  }, 7800);
 
   //Delete JWT from Local storage;
 }
@@ -43,10 +50,10 @@ function handleLogout() {
   return (
       <Flex h="100%" w={"100%"} direction={"column"}>
         <Header handleLogIn={handleLogIn} handleLogout={handleLogout} user={user} handleOpenLoginModal={onLoginModalOpen}/>
+        {showLogoutAlert && <LogoutSuccessfullAlert/>}
         <RouterProvider router={router} />
         <LoginModal isLoginModalActive={isLoginModalOpen} handleCloseLoginModal={onLoginModalClose} handleLogIn={handleLogIn} onForgotPasswordModalOpen={onForgotPasswordModalOpen}/>
         <ForgotPasswordModal isForgotPasswordModalOpen={isForgotPasswordModalOpen} onForgotPasswordModalClose={onForgotPasswordModalClose}/>
-        <LogoutSuccessfullAlert/>
         <Footer/>
       </Flex>
   )
