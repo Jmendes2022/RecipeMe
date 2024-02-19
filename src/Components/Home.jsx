@@ -1,8 +1,8 @@
-import { Container, Center, Flex, Text, Heading, OrderedList, ListItem, UnorderedList} from "@chakra-ui/layout";
-import { useDisclosure, Button, } from '@chakra-ui/react'
+import { Container, Flex, Text, Heading, OrderedList, ListItem, UnorderedList} from "@chakra-ui/layout";
+import { Button, } from '@chakra-ui/react'
 import HistoryTab from "./HistoryTab";
 import IngredientsTab from "./IngredientsTab";
-import { useEffect, useState } from "react";
+import {useState } from "react";
 
 
 export default function Home() {
